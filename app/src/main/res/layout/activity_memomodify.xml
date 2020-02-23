@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Memomodify">
+
+    <ImageButton
+        android:id="@+id/memomodifybackbt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/trans"
+
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <ImageButton
+        android:id="@+id/memomodifysavebt"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/trans"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/check" />
+
+    <ImageButton
+        android:id="@+id/memomodifydeletebt"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/trans"
+        android:text="취소"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/memomodifysavebt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rubbish" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/gray"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagemodifyselectbt">
+
+        <EditText
+            android:id="@+id/titlemodifyedittext"
+
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginTop='5dp'
+            android:background="@color/white"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:hint="제목이 필요하면 입력하세요"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text=""
+            android:textSize="20dp" />
+
+        <ScrollView
+            android:id="@+id/memomodifyscrollview"
+            android:layout_width="match_parent"
+            android:layout_height="278dp"
+            android:layout_marginTop='5dp'
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="388dp"
+                android:orientation="vertical">
+
+                <EditText
+
+                    android:id="@+id/contentmodifyedittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:hint="내용을 입력하세요"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text=""
+                    android:textSize="20dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="첨부 이미지"
+            android:textSize="20dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/imagemodifyrecycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="90dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="18dp"
+        android:text="메모 편집"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/memomodifybackbt"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imagemodifyselectbt"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/trans"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/memomodifydeletebt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/add" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
